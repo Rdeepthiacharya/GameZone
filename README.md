@@ -1,6 +1,6 @@
 # Project Description
 
-GameZone is a browser-based gaming platform that lets users enjoy multiple interactive games directly from their browser. It features popular games like Tic Tac Toe, Memory Match, Snake, and 2048, all designed with engaging animations and score tracking to enhance the user experience.
+GameZone is a browser-based gaming platform that allows users to enjoy multiple interactive games directly within their browser. It features popular games like Tic Tac Toe, Memory Match, Snake, and 2048, all designed with engaging animations and score tracking to enhance the user experience.
 
 The platform is developed using front-end technologies (HTML, CSS, and JavaScript), making it lightweight, responsive, and accessible on any modern web browser.
 
@@ -27,7 +27,7 @@ To run the application, follow these steps:
 
 ## Features
 
-A collection of classic games:
+- A collection of classic games:
   - Tic Tac Toe
   - Memory Match
   - Snake
