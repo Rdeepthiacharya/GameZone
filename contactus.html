@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon  -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <title>GameZone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css" />
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body class="bodystyle1">
+  <header>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <img src="images/logo2.png" alt="GameZone Logo" class="logo">
+        <div class="brand-text">
+          <h1>GameZone</h1>
+          <p>Where Every Click Sparks Power...</p>
+        </div>
+      </div>
+
+      <button class="hamburger">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <div class="navbar-menu">
+        <div class="nav-links-container">
+          <a href="index.html" class="nav-link"><span>Home</span></a>
+          <a href="about.html" class="nav-link"><span>About Us</span></a>
+          <a href="contactus.html" class="nav-link"><span>Contact Us</span></a>
+          <a href="login.html" class="nav-link"><span>Login/Signup</span></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="wrapper">
+    <div class="contact-form">
+      <div class="container">
+        <div class="main">
+          <div class="content">
+            <h2>Contact Us</h2>
+            <form action="https://formspree.io/f/xovevnkk" method="post">
+              <div class="input-box">
+                <input type="text" id="name" placeholder="Enter your name" required>
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="input-box">
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <div class="input-box">
+                  <textarea name="message" placeholder="Your Message" required></textarea>
+                  <i class="fa-solid fa-message"></i>
+                </div>
+                <button type="submit" class="btn"><span>Send</span></button>
+            </form>
+          </div>
+        </div>
+        <div class="form-img">
+          <img src="images/bg1.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div id="main-footer"></div>
+  </footer>
+  <script src="app.js" defer></script>
+</body>
+
+</html>

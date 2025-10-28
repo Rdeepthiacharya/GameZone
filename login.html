@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Favicon  -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <title>Login/Signup</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css" />
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <style>
+    .page-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body class="bodystyle1">
+  <header>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <img src="images/logo2.png" alt="GameZone Logo" class="logo" />
+        <div class="brand-text">
+          <h1>GameZone</h1>
+          <p>Where Every Click Sparks Power</p>
+        </div>
+      </div>
+
+      <button class="hamburger">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <div class="navbar-menu">
+        <a href="index.html" class="nav-link"><span>Back</span></a>
+      </div>
+    </nav>
+  </header>
+  <div class="page-content">
+    <div class="container2">
+      <div class="form-box login">
+        <form action="#">
+          <h1>Login</h1>
+          <div class="input-box">
+            <input type="text" id="login_username" placeholder="Enter your name" required />
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="input-box">
+            <input type="password" id="login_pin" maxlength="4" placeholder="Enter your PIN" required />
+            <span class="eye" onclick="togglePassword('login_pin', 'login_hide1', 'login_hide2')">
+              <i id="login_hide1" class="fa-solid fa-eye-slash"></i>
+              <i id="login_hide2" class="fa-solid fa-eye"></i>
+            </span>
+          </div>
+
+          <button type="button" onclick="login()"><span>Submit</span></button>
+          <p id="login_message"></p>
+
+          <p class="mobile-switch" style="margin-top: 10px">
+            Don't have an account?
+            <button type="button" class="register-btn">Sign Up</button>
+          </p>
+        </form>
+      </div>
+
+      <div class="form-box register">
+        <form action="#">
+          <h1>Signup</h1>
+          <div class="input-box">
+            <input type="text" id="signup_username" placeholder="Enter your name" required />
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <button type="button" onclick="generateRandomName()">
+            <span>🎲 Generate Name</span>
+          </button>
+
+          <div class="input-box">
+            <input type="password" id="signup_pin" maxlength="4" placeholder="Enter your PIN" required />
+            <span class="eye" onclick="togglePassword('signup_pin', 'signup_hide1', 'signup_hide2')">
+              <i id="signup_hide1" class="fa fa-eye-slash"></i>
+              <i id="signup_hide2" class="fas fa-eye"></i>
+            </span>
+          </div>
+          <button type="button" onclick="signup()">
+            <span>Submit</span>
+          </button>
+          <p id="signup_message"></p>
+
+          <p class="mobile-switch" style="margin-top: 10px">
+            Already have an account?
+            <button type="button" class="login-btn">Log In</button>
+          </p>
+        </form>
+      </div>
+
+      <div class="toggle-box">
+        <div class="toggle-panel toggle-left">
+          <h1>Hello, Welcome!</h1>
+          <p>Don't have an account?</p>
+          <button class="btn register-btn"><span>SignUp</span></button>
+        </div>
+
+        <div class="toggle-panel toggle-right">
+          <h1>Welcome Back!</h1>
+          <p>Already have an account?</p>
+          <button class="btn login-btn"><span>LogIn</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js" defer></script>
+  <script type="text/javascript">
+    document.querySelectorAll(".register-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        container2.classList.add("active");
+      });
+    });
+
+    document.querySelectorAll(".login-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        container2.classList.remove("active");
+      });
+    });
+
+    const container2 = document.querySelector(".container2");
+    const registerBtn = document.querySelector(".register-btn");
+    const loginBtn = document.querySelector(".login-btn");
+
+    registerBtn.addEventListener("click", () => {
+      container2.classList.add("active");
+    });
+
+    loginBtn.addEventListener("click", () => {
+      container2.classList.remove("active");
+    });
+
+    // login
+    function login() {
+      const name = document.getElementById("login_username").value.trim();
+      const pin = document.getElementById("login_pin").value;
+      const adminUser = "admin";
+      const adminPass = "1234";
+      const users = JSON.parse(localStorage.getItem("users") || "{}");
+      const message = document.getElementById("login_message");
+      if (users[name] && users[name].pin === pin) {
+        localStorage.setItem("currentUser", name);
+        window.location.href = "games.html";
+        //   } else if (name === adminUser && pin === adminPass) {  //  Check for admin login
+        //     alert("Logged in as Admin!");
+        //     localStorage.setItem("activeUser", name);
+        //     window.location.href = "admin.html";
+        //     return;
+      } else {
+        message.textContent = "Invalid username or PIN.";
+      }
+    }
+
+    // signup
+    function generateRandomName() {
+      const adjectives = ["Cool", "Fast", "Smart", "Crazy", "Lucky"];
+      const nouns = ["Tiger", "Ninja", "Wizard", "Rocket", "Eagle"];
+      const randomName =
+        adjectives[Math.floor(Math.random() * adjectives.length)] +
+        nouns[Math.floor(Math.random() * nouns.length)] +
+        Math.floor(Math.random() * 100);
+
+      document.getElementById("signup_username").value = randomName;
+      return randomName;
+    }
+
+    function signup() {
+      const nameInput = document.getElementById("signup_username");
+      const pin = document.getElementById("signup_pin").value;
+      let name = nameInput.value.trim();
+      const message = document.getElementById("signup_message");
+
+      if (pin.length !== 4 || isNaN(pin)) {
+        message.textContent = "Enter a valid 4-digit PIN.";
+        return;
+      }
+
+      if (!name) {
+        name = generateRandomName();
+      }
+
+      const users = JSON.parse(localStorage.getItem("users") || "{}");
+      if (users[name]) {
+        message.textContent = "Username already exists.";
+        return;
+      }
+
+      users[name] = { pin, score: 50 };
+      localStorage.setItem("users", JSON.stringify(users));
+      message.textContent = `Signed up as ${name}.`;
+      localStorage.setItem("currentUser", name);
+      setTimeout(() => (window.location.href = "#"), 2000);
+    }
+
+    // Toggle password visibility
+    function togglePassword(inputId, hide1Id, hide2Id) {
+      const input = document.getElementById(inputId);
+      const hide1 = document.getElementById(hide1Id);
+      const hide2 = document.getElementById(hide2Id);
+
+      if (input.type === "password") {
+        input.type = "text";
+        hide1.style.display = "none";
+        hide2.style.display = "block";
+      } else {
+        input.type = "password";
+        hide1.style.display = "block";
+        hide2.style.display = "none";
+      }
+    }
+  </script>
+</body>
+
+</html>

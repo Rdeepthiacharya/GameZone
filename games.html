@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon  -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>Games</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #fff;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 4rem 1rem;
+        }
+    </style>
+</head>
+
+<body class="bodystyle1">
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <img src="images/logo2.png" alt="GameZone Logo" class="logo">
+                <div class="brand-text">
+                    <h1>GameZone</h1>
+                    <p>Where Every Click Sparks Power...</p>
+                </div>
+            </div>
+            <button class="hamburger">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <div class="navbar-menu">
+                <a href="index.html" class="nav-link"><span>Logout</span></a>
+            </div>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <main>
+            <div class="masking-container">
+                <h1 class="masked-text">Welcome, <span id="user-name"></span>!</h1>
+            </div>
+
+            <p>Your Total Score: <strong><span id="user-score">0</span></strong></p>
+            <div>
+                <section class="minigames">
+                    <p>Ready to play some Games? Choose one below:</p><br><br>
+                    <div class="wrapper1">
+                        <div class="cols">
+                            <div class="col">
+                                <div class="container1">
+                                    <div class="front" style="background-image: url('images/ttt2.jpg')">
+                                    </div>
+                                    <div class="inner">
+                                        <p class="title-with-underline">Tic Tac Toe <span class="underline"><span
+                                                    class="bar"></span></span></p><br>
+                                        <span>Play against the bot in this classic 3x3 battle.</span>
+                                    </div>
+                                    <div class="back">
+                                        <button onclick="openGame('tic-tac-toe')"><span>Play Now</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="container1">
+                                    <div class="front" style="background-image: url('images/mm1.jpg')">
+                                    </div>
+                                    <div class="inner">
+                                        <p class="title-with-underline">Memory Match <span class="underline"><span
+                                                    class="bar"></span></span></p><br>
+                                        <span>Challenge your memory skills by matching hidden pairs.</span>
+                                    </div>
+                                    <div class="back">
+                                        <div class="inner">
+                                            <button onclick="openGame('memory-match')"> <span>Play Now</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="container1">
+                                    <div class="front" style="background-image: url('images/sg2.jpg')">
+                                    </div>
+                                    <div class="inner">
+                                        <p class="title-with-underline">Snake <span class="underline"><span
+                                                    class="bar"></span></span></p><br>
+                                        <span>Eat, grow, and avoid hitting the walls.</span>
+                                    </div>
+                                    <div class="back">
+                                        <div class="inner">
+                                            <button onclick="openGame('snake')"><span>Play Now</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="container1">
+                                    <div class="front" style="background-image: url('images/l1.jpg')">
+                                    </div>
+                                    <div class="inner">
+                                        <p class="title-with-underline">2048 <span class="underline"><span
+                                                    class="bar"></span></span></p><br>
+                                        <span>Swipe and merge tiles to reach the magic number 2048!</span>
+                                    </div>
+                                    <div class="back">
+                                        <div class="inner">
+                                            <button onclick="openGame('2048')"><span>Play Now</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="container1 coming-disabled">
+                                    <div class="front" style="background-image: url('images/rps1.jpg')">
+                                        <div class="coming-soon">Coming Soon</div>
+                                    </div>
+                                    <div class="inner">
+                                        <p class="title-with-underline">Rock Paper Scissors
+                                            <span class="underline"><span class="bar"></span></span>
+                                        </p><br>
+                                        <span>Pick rock, paper, or scissors and challenge the computer to win!</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="container1 coming-disabled">
+                                    <div class="front" style="background-image: url('images/wam1.jpg')">
+                                        <div class="coming-soon">Coming Soon</div>
+                                    </div>
+                                    <div class="inner">
+                                        <p class="title-with-underline">Whack-a-Mole <span class="underline"><span
+                                                    class="bar"></span></span></p><br>
+                                        <span>Click the moles as fast as you can before they disappear!</span>
+
+                                    </div>
+                                    <div class="back">
+                                        <div class="inner">
+                                            <button><a href="#"><span>Play Now</span></a></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="container1 coming-disabled">
+                                    <div class="front" style="background-image: url('images/drg1.jpg')">
+                                        <div class="coming-soon">Coming Soon</div>
+                                    </div>
+                                    <div class="inner">
+                                        <p class="title-with-underline">Dice Roll Game <span class="underline"><span
+                                                    class="bar"></span></span></p><br>
+                                        <span>Roll the dice and see who gets the highest score to win!</span>
+                                    </div>
+                                    <div class="back">
+                                        <div class="inner">
+                                            <button><a href="#"><span>Play Now</span></a></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="container1 coming-disabled">
+                                    <div class="front" style="background-image: url('images/ty1.jpg')">
+                                        <div class="coming-soon">Coming Soon</div>
+                                    </div>
+                                    <div class="inner">
+                                        <p class="title-with-underline">Typing Speed Game <span class="underline"><span
+                                                    class="bar"></span></span></p><br>
+                                        <span>Type the words quickly and accurately before time runs out!</span>
+                                    </div>
+                                    <div class="back">
+                                        <div class="inner">
+                                            <button><a href="#"><span>Play Now</span></a></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div id="game-modal" class="modal">
+                <div class="game-box">
+                    <button class="modal-info" onclick="showGameTutorial()" aria-label="How to Play"><span><i
+                                class="fa-solid fa-circle-info"></i></span></span></button>
+                    <button class="modal-close" onclick="closeGame()" aria-label="Close"><span>&times;</span></button>
+                    <div id="game-container"></div>
+                </div>
+            </div>
+            <!-- Compact Tutorial Modal -->
+            <div id="tutorial-modal" class="tutorial-modal">
+                <div class="tutorial-content">
+                    <button class="tutorial-close" onclick="closeTutorial()"
+                        aria-label="Close"><span>&times;</span></button>
+                    <div class="tutorial-header">
+                        <h3 id="tutorial-title">How to Play</h3>
+                    </div>
+                    <div class="video-container">
+                        <iframe id="tutorial-video" src="" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div id="tutorial-text" class="tutorial-text">
+                        <p>Game instructions will appear here.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <div id="main-footer"></div>
+    </footer>
+    <script src="app.js" defer></script>
+    <script src="script1.js"></script>
+
+    <script type="text/javascript">
+        // Game tutorial content with YouTube links
+        const gameTutorials = {
+            'tic-tac-toe': {
+                title: 'Tic Tac Toe',
+                videoId: '3qzcAMShotQ',
+                content: `
+            <p><strong>Goal:</strong> Get three in a row.</p>
+            <ul>
+                <li>You are X, computer is O</li>
+                <li>Click any empty square</li>
+                <li>Win with 3 X's in a row</li>
+                <li>+1 per move, +5 for winning</li>
+            </ul>
+        `
+            },
+            'memory-match': {
+                title: 'Memory Match',
+                videoId: 'TV_2PNjPRUY',
+                startTime: 1309, // Starts at 21:49
+                content: `
+            <p><strong>Goal:</strong> Find all pairs.</p>
+            <ul>
+                <li>Click cards to flip them</li>
+                <li>Match two same cards</li>
+                <li>Complete all pairs to win</li>
+                <li>+2 per match, -1 per wrong</li>
+            </ul>
+        `
+            },
+            'snake': {
+                title: 'Snake',
+                videoId: 'baBq5GAL0_U',
+                startTime: 1711, // Starts at 28:31
+                content: `
+            <p><strong>Goal:</strong> Grow longest snake.</p>
+            <ul>
+                <li>Arrow keys to move</li>
+                <li>Eat red food to grow</li>
+                <li>Avoid walls and yourself</li>
+                <li>+1 per move, +5 per food</li>
+            </ul>
+        `
+            },
+            '2048': {
+                title: '2048',
+                videoId: '-rqRWzSP2iM',
+                content: `
+            <p><strong>Goal:</strong> Reach 2048 tile.</p>
+            <ul>
+                <li>Arrow keys to slide tiles</li>
+                <li>Same numbers merge</li>
+                <li>New tiles appear each move</li>
+                <li>Score = sum of merges</li>
+            </ul>
+        `
+            }
+        };
+
+        let currentGame = '';
+
+        function openGame(game) {
+            currentGame = game;
+            document.getElementById('game-modal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+
+            if (game === 'tic-tac-toe') showTicTacToe();
+            if (game === 'memory-match') showMemoryMatch();
+            if (game === 'snake') showSnake();
+            if (game === '2048') show2048();
+        }
+
+        function closeGame() {
+            document.getElementById('game-modal').classList.remove('show');
+            document.getElementById('game-container').innerHTML = '';
+            document.body.style.overflow = '';
+            window.onkeydown = null;
+        }
+
+        // Helper to build YouTube embed URL
+        function getYouTubeEmbedUrl({ videoId, startTime }) {
+            let url = `https://www.youtube.com/embed/${videoId}?autoplay=0&rel=0`;
+            if (startTime) {
+                url += `&start=${startTime}`;
+            }
+            return url;
+        }
+
+        function showGameTutorial() {
+            if (!currentGame) return;
+
+            const tutorial = gameTutorials[currentGame];
+            if (!tutorial) return;
+
+            // Set title and description
+            document.getElementById('tutorial-title').textContent = tutorial.title;
+            document.getElementById('tutorial-text').innerHTML = tutorial.content;
+
+            // Embed YouTube video
+            let embedUrl = `https://www.youtube.com/embed/${tutorial.videoId}?rel=0&autoplay=1`;
+            if (tutorial.startTime) {
+                embedUrl += `&start=${tutorial.startTime}`;
+            }
+
+            document.getElementById('tutorial-video').src = embedUrl;
+
+            // Show modal
+            document.getElementById('tutorial-modal').classList.add('show');
+        }
+
+        function closeTutorial() {
+            document.getElementById('tutorial-video').src = '';
+            document.getElementById('tutorial-modal').classList.remove('show');
+        }
+
+        document.getElementById('tutorial-modal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeTutorial();
+            }
+        });
+    </script>
+</body>
+
+</html>

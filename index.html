@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Favicon  -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <title>GameZone</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css" />
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+
+<body class="bodystyle2">
+  <header>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <img src="images/logo2.png" alt="GameZone Logo" class="logo" />
+        <div class="brand-text">
+          <h1>GameZone</h1>
+          <p>Where Every Click Sparks Power...</p>
+        </div>
+      </div>
+
+      <button class="hamburger">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <div class="navbar-menu">
+        <div class="nav-links-container">
+          <a href="index.html" class="nav-link"><span>Home</span></a>
+          <a href="about.html" class="nav-link"><span>About Us</span></a>
+          <a href="contactus.html" class="nav-link"><span>Contact Us</span></a>
+          <a href="login.html" class="nav-link"><span>Login/Signup</span></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="wrapper">
+    <main>
+      <section class="hero">
+        <div class="masking-container">
+          <h1 class="masked-text">
+            LET THE GAME BEGIN<span id="user-name"></span>
+          </h1>
+        </div>
+        <p class="hero-subtitle">
+          Get ready for an exhilarating gaming experience like no other.
+        </p>
+
+        <button>
+          <a href="login.html"><span>Play Now</span></a>
+        </button>
+      </section>
+      <p id="login_message"></p>
+    </main>
+  </div>
+  <footer>
+    <div id="main-footer"></div>
+  </footer>
+  <script src="app.js" defer></script>
+</body>
+
+</html>
